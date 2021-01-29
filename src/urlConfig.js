@@ -1,0 +1,1 @@
+export const  api=`https://flip-kart-mern.herokuapp.com/api`;
