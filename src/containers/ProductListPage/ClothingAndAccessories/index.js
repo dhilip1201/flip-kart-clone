@@ -23,20 +23,34 @@ const ClothingAndAccessories = (props) => {
 
   return (
     <div style={{ padding: "10px" }}>
-      <Card
-        style={{
-          boxSizing: "border-box",
-          padding: "10px",
-          display: "flex",
-        }}
-      >
-        {product.products.map((product) => (
+      <div className="caContainerFull" >
+        <div className="caLeftSidebar">
+        <Card style={{
+            boxSizing: "border-box",
+            padding: "10px",
+            
+          }}>
+            <div>
+              <h3>Filter</h3>
+            </div>
+            </Card>
+        </div>
+      <div className="caRightSidebar">
+      {product.products.map((product) => (
+        <Card
+          style={{
+            boxSizing: "border-box",
+            padding: "10px",
+            
+          }}
+        >
           <div className="caContainer">
             <Link
               className="caImgContainer"
               to={`/${product.slug}/${product._id}/p`}
             >
               <img src={product.productPictures[0].img} />
+
             </Link>
             <div>
               <div className="caProductName">{product.name}</div>
@@ -46,8 +60,14 @@ const ClothingAndAccessories = (props) => {
               </div>
             </div>
           </div>
-        ))}
-      </Card>
+        </Card>
+      ))}
+      </div>
+
+      
+      
+      </div>
+      
     </div>
   );
 };
